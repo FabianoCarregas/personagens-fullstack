@@ -1,6 +1,6 @@
 package com.fab.personagens.config;
 
-import com.fab.personagens.Domain.Personagem;
+import com.fab.personagens.Domain.Character;
 import com.fab.personagens.repositories.PRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,9 +18,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Personagem p1 = new Personagem(null,"Spider-man", 5, "EUA", "Marvel", "url://");
-        Personagem p2 = new Personagem(null,"Super-man", 9, "EUA", "DC", "url://");
-        Personagem p3 = new Personagem(null,"Iron-man", 7, "EUA", "Marvel", "url://");
+        Character p1 = new Character(null,"Spider-man", 5, "EUA", "Marvel", "url:");
+        Character p2 = new Character(null,"Super-man", 9, "EUA", "DC", "url:");
+        Character p3 = new Character(null,"Iron-man", 7, "EUA", "Marvel", "url:");
 
         repository.saveAll(Arrays.asList(p1,p2,p3));
     }

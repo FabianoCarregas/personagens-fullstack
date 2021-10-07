@@ -7,27 +7,27 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class Personagem implements Serializable {
+public class Character implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Integer forca;
-    private String nacionalidade;
-    private String time;
-    private String foto;
+    private Integer power;
+    private String country;
+    private String team;
+    private String photo;
 
-    public Personagem(){
+    public Character(){
     }
 
-    public Personagem(Long id, String name, Integer forca, String nacionalidade, String time, String foto) {
+    public Character(Long id, String name, Integer power, String country, String team, String foto) {
         this.id = id;
         this.name = name;
-        this.forca = forca;
-        this.nacionalidade = nacionalidade;
-        this.time = time;
-        this.foto = foto;
+        this.power = power;
+        this.country = country;
+        this.team = team;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -46,36 +46,36 @@ public class Personagem implements Serializable {
         this.name = name;
     }
 
-    public Integer getForca() {
-        return forca;
+    public Integer getPower() {
+        return power;
     }
 
-    public void setForca(Integer forca) {
-        this.forca = forca;
+    public void setPower(Integer power) {
+        this.power = power;
     }
 
-    public String getNacionalidade() {
-        return nacionalidade;
+    public String getCountry() {
+        return country;
     }
 
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getTime() {
-        return time;
+    public String getTeam() {
+        return team;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setTeam(String team) {
+        this.team = team;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Personagem implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Personagem that = (Personagem) o;
+        Character that = (Character) o;
 
         return id != null ? id.equals(that.id) : that.id == null;
     }
