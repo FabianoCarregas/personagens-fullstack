@@ -32,5 +32,12 @@ public class PService {
 
     }
 
+    public Character update(Long id) {
+        Character character= repository.getById(id);
+        return repository.save(character);
+
+    }
+
+
 
 }
