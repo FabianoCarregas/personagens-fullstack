@@ -1,12 +1,10 @@
 package com.fab.personagens.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "tb_character")
 public class Character implements Serializable {
 
     @Id
@@ -16,18 +14,18 @@ public class Character implements Serializable {
     private Integer power;
     private String country;
     private String team;
-    private String photo;
+    private String imageUri;
 
     public Character(){
     }
 
-    public Character(Long id, String name, Integer power, String country, String team, String foto) {
+    public Character(Long id, String name, Integer power, String country, String team, String imageUri) {
         this.id = id;
         this.name = name;
         this.power = power;
         this.country = country;
         this.team = team;
-        this.photo = photo;
+        this.imageUri = imageUri;
     }
 
     public Long getId() {
@@ -70,12 +68,12 @@ public class Character implements Serializable {
         this.team = team;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getImageUri() {
+        return imageUri;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
     }
 
     @Override
