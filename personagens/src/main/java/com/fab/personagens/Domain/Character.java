@@ -11,6 +11,7 @@ public class Character implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String description;
     private Integer power;
     private String country;
     private String team;
@@ -19,9 +20,10 @@ public class Character implements Serializable {
     public Character(){
     }
 
-    public Character(Long id, String name, Integer power, String country, String team, String imageUri) {
+    public Character(Long id, String name, String description, Integer power, String country, String team, String imageUri) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.power = power;
         this.country = country;
         this.team = team;
@@ -42,6 +44,14 @@ public class Character implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getPower() {

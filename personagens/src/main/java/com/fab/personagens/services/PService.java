@@ -24,7 +24,7 @@ public class PService {
     }
 
     public Character insert(Character obj) {
-        return repository.save(obj);
+         return repository.save(obj);
     }
 
     public void delete(Long id) {
@@ -32,12 +32,19 @@ public class PService {
 
     }
 
-    public Character update(Long id) {
-        Character character= repository.getById(id);
-        return repository.save(character);
+    public Character update(Long id, Character obj) {
+        Character entity = repository.getById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
 
     }
 
-
+    private void updateData(Character entity, Character obj) {
+        entity.setName(obj.getName());
+        entity.setDescription(obj.getDescription());
+        entity.setPower(obj.getPower());
+        entity.setCountry(obj.getCountry());
+        entity.setImageUri(obj.getImageUri());
+    }
 
 }

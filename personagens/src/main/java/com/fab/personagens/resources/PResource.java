@@ -3,7 +3,6 @@ package com.fab.personagens.resources;
 import com.fab.personagens.Domain.Character;
 import com.fab.personagens.services.PService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,9 +40,8 @@ public class PResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Character>update(@PathVariable Long id) {
-        Character update = service.update(id);
-        return new ResponseEntity<>(update, HttpStatus.OK);
+    public ResponseEntity<Character> update(@PathVariable Long id, @RequestBody Character obj) {
+        obj = service.update(id, obj);
+        return ResponseEntity.ok().body(obj);
     }
-
 }
